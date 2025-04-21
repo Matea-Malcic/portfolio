@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Matea Malčić</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="projects-page">
+
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="logo-container">
+      <img src="photos/vigo-name.png" alt="VIGO logo" class="vigo-logo" />
+    </div>
+    <nav class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+    
+      <div class="dropdown">
+        <a href="projects.html" class="dropdown-toggle">Projects <span class="arrow">▼</span></a>
+        <div class="dropdown-content">
+          <a href="#blender">3D Modeling & Animation</a>
+          <a href="#printing">3D Printing</a>
+          <a href="#programming">Programming</a>                  
+        </div>
+      </div>
+    
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="blender" class="project-section fade-in">
+    <h2>3D Modeling & Animation</h2>
+  
+    <div class="media-grid">
+      <div class="media-item">
+        <video controls>
+          <source src="modelling&animation/donnuts.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Blender Donut Animation</p>
+      </div>
+  
+      <div class="media-item">
+        <img src="modelling&animation/donnuts.png" alt="Blender Donut Render">
+        <p>Donut Render</p>
+      </div>
+  
+      <div class="media-item">
+        <video controls>
+          <source src="modelling&animation/ocean.qt" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Ocean Storm Animation</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="printing" class="project-section fade-in">
+    <h2>3D Printing</h2>
+    <p>Printed using a <strong>Creality K1</strong> high-speed 3D printer.</p>
+
+    <p class="current-work-note">
+      This part of the website is still in progress as I organize and upload my work.
+    </p>
+  
+    <div class="print-item">
+      <img src="3dprint/easter.jpg" alt="Easter print" />
+      <p class="caption">Easter print.</p>
+      <p class="note">I do not own the model – used only for personal printing.</p>
+    </div>
+  </section>
+
+  <section id="programming" class="project-section fade-in">
+    <h2>Programming Projects</h2>
+    <p class="current-work-note">
+      This part of the website is still in progress as I organize and upload my work.
+    </p>
+    <section class="project-section fade-in">
+      <h3 class="section-subtitle">Currently Working On</h3>
+    
+      <ul class="current-projects-list">
+        <li>🧵 Implementing IPC (Inter-Process Communication) protocol in C</li>
+        <li>🛠️ C++ ray tracer with Blinn–Phong shading</li>
+        <li>🃏 Strategy card game in C++ inspired by Magic: The Gathering, Hearthstone, and Legends of Runeterra</li>
+      </ul>
+    </section>
+
+    <div class="media-grid two-col">
+  
+      <div class="media-item bump-up">
+        <p>Tetris game made using Python and Pygame.</p>
+        <video controls>
+          <source src="programming/tetris.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <div class="media-item">
+        <p>Terminal game written in C using ncurses, created as an exercise in POSIX threading.</p>
+        <video controls>
+          <source src="programming/slpa1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <!-- Footer Quote -->
+  <div class="sticky-quote">
+    <p>“There are no two words in the English language more harmful than ‘good job’.” <span>– Whiplash</span></p>
+  </div>
+
+  <!-- Optional scroll-in animation -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOnScroll = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>

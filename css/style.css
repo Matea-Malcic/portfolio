@@ -1,0 +1,641 @@
+/* --- Base & Typography --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #ede4d3;
+  line-height: 1.6;
+}
+
+html {
+  scroll-padding-top: 120px; /* Adjust this value to match your sticky header height */
+}
+
+/* --- Hero Section --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 4rem;
+  position: relative;
+}
+
+.logo-container {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+}
+
+.vigo-logo {
+  width: 120px;
+  max-width: 90%;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.nav-buttons a,
+.nav-buttons .dropdown-toggle {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  background-color: #ede4d3;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+  vertical-align: middle; /* 👈 This fixes the vertical misalignment */
+  font-weight: 600;
+}
+
+.nav-buttons a:hover,
+.nav-buttons .dropdown-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* Prevent lifting when hovering the full dropdown area */
+.dropdown:hover .dropdown-toggle {
+  transform: none;
+}
+
+
+
+.hero__img {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: block;
+  border: 2px solid black;
+}
+
+.hero__text {
+  /* overlap the image slightly */
+  margin-top: -20px;
+  background: #e8e5db;
+  padding: 2rem 1.5rem;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero__text h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+.hero__text p {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+
+/*about*/
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #ede4d3;
+  z-index: 1000;
+  padding: 0rem 0 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about {
+  background-color: #ede4d3;
+  padding: 4rem 1rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1000px;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about__image img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about__text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about__text h2 {
+  font-size: 2rem;
+  margin-bottom: 0rem;
+  color: #222;
+}
+
+.about__text p {
+  font-size: 1.125rem;
+  color: #444;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.about-extra {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.about-extra h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.vigo-logo-divider {
+  text-align: center;
+  margin: 0rem 0rem 4rem;
+}
+
+.vigo-logo-divider img {
+  width: 300px;
+  max-width: 90%;
+  opacity: 0.95;
+}
+
+.about-languages ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.about-languages li {
+  margin-bottom: 0.5rem;
+}
+
+.language-bars {
+  max-width: 400px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.lang {
+  margin-bottom: 1rem;
+}
+
+.lang span {
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+.bar {
+  background-color: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Custom levels */
+.native {
+  width: 100%;
+  background-color: #3cba54;
+}
+
+.fluent {
+  width: 90%;
+  background-color: #4885ed;
+}
+
+.intermediate {
+  width: 70%;
+  background-color: #f4c20d;
+}
+
+.basics {
+  width: 10%;
+  background-color: #ffa07a;
+}
+
+.beginner {
+  width: 5%;
+  background-color: #db3236;
+}
+
+.about-skills .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80px;
+  min-height: 100px; /* optional: for consistent block height */
+  text-align: center;
+  white-space: normal; /* allow text wrapping */
+}
+
+.skill img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0; /* icon doesn't shrink */
+}
+
+.sticky-quote {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ede4d3;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 0.3px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.sticky-quote span {
+  font-weight: 400;
+  color: #444;
+  margin-left: 0.5rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hobbies-section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hobbies-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.hobby {
+  margin-bottom: 2.5rem;
+}
+
+.hobby img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.focus-bottom {
+  object-position: center bottom;
+}
+
+.focus-top {
+  object-position: center 2%;
+}
+
+.focus-center {
+  object-position: center center;
+}
+
+.focus-midbottom {
+  object-position: center 75%;
+}
+
+.hobby p {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Contact */
+/* Contact Page */
+.contact-page {
+  background-color: #ede4d3;
+  color: #333;
+}
+
+/* Contact Section Layout */
+.contact-section {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.contact-img img {
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer (Quote) */
+.contact-page .sticky-quote {
+  background-color: #ede4d3;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Ikonice i redovi */
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-line a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.contact-line a:hover {
+  color: #000;
+}
+
+.contact-line .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.contact-line span {
+  padding-left: 0.7rem; /* ili probaj 0.5rem ako želiš malo više */
+}
+
+/* Projects */
+/* Project Section Layout */
+.project-section {
+  background-color: #ede4d3;
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+  text-align: center;
+}
+
+.project-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.project-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Dropdown nav */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #ede4d3;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ede4d3;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 10;
+  flex-direction: column;
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+.dropdown-content a {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  text-decoration: none;
+  color: #333;
+  background-color: #ede4d3;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #e0d6c1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.media-item {
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+}
+
+.media-item video,
+.media-item img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.media-item p {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.print-item {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.print-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 0.1; /* tighten spacing a bit */
+}
+
+.note {
+  font-size: 0.2rem; /* make it clearly smaller */
+  color: #777;
+  font-style: italic;
+  margin-top: 0.9rem; /* bring closer */
+  line-height: 1.1;
+}
+
+
+
+
+.media-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.media-item {
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+}
+
+.media-item video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.media-item p {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.media-grid.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.media-grid.two-col .media-item {
+  max-width: 100%;
+}
+
+.media-grid.two-col video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.bump-up {
+  margin-top: -27rem;
+}
+
+.current-projects-list {
+  max-width: 700px;
+  margin: 1rem auto 2rem;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.8;
+}
+.current-projects-list li {
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+}
+
+.section-subtitle {
+  font-size: 1.5rem; /* ili probaj 1.4rem ako želiš malo manje */
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  margin-top: -0.5rem; /* probaj i -1rem ako želiš još bliže */
+  font-size: 1.3rem; 
+}
+
+.arrow {
+  font-size: 0.8em;
+  margin-left: 0.3rem;
+  display: inline-block;
+  transform: translateY(-1px);
+  opacity: 0.5;
+}
+
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg) translateY(-1px);
+}
